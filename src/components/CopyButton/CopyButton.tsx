@@ -7,9 +7,16 @@ const prompt =
   "My skills: react, angular, vue. Have basic experience with python, django." +
   "The response should be no more than 700 characters.";
 
-export const CopyButton = (props: { descr: string | null }) => {
+const about = "расскажи мне о чем этот проект";
+
+export const CopyButton = (props: {
+  descr: string | null;
+  type: "about" | "copy";
+}) => {
   const [coppied, setCoppied] = useState(false);
-  const textToCopy = `${props.descr}. ${prompt}`;
+  const textToCopy = `${props.descr}. ${"\n"}${
+    props.type === "copy" ? prompt : about
+  }`;
 
   return (
     <Button
@@ -25,7 +32,7 @@ export const CopyButton = (props: { descr: string | null }) => {
         }
       }}
     >
-      {coppied ? "Copied" : "Copy"}
+      {coppied ? "Copied" : props.type === "about" ? "about" : "prompt"}
     </Button>
   );
 };
