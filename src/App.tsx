@@ -1,7 +1,5 @@
-import { Fragment } from "react";
-
 function App() {
-  return <Fragment>hello</Fragment>;
+  return <>hello</>;
 }
 
 export default App;
