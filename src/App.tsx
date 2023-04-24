@@ -23,6 +23,14 @@ function App() {
               <Grid item>{o.budget.maximum}</Grid>
             </Grid>
             <Box>{o.description}</Box>
+            <div>
+              {o.description?.split("\n").map((line) => (
+                <>
+                  {line}
+                  <br />
+                </>
+              ))}
+            </div>
             <CopyButton descr={o.description} />
           </Box>
         </Box>
