@@ -1,7 +1,7 @@
 import { getOrders } from "./api";
+import { Arrows } from "./components/Arrows/Arrows";
 import { Order } from "./components/Order";
 import { classes } from "./styles";
-import KeyboardBackspaceIcon from "@mui/icons-material/KeyboardBackspace";
 import { Box, Grid, IconButton } from "@mui/material";
 import { useEffect, useRef, useState } from "react";
 import { useQuery } from "react-query";
@@ -33,20 +33,9 @@ function App() {
     }
   }, [orders]);
 
-  console.log(offset);
-
   return (
     <Box sx={classes.wrapper} ref={ordersContainerRef}>
-      <Grid container sx={{ position: "fixed", bottom: 1, left: 1 }}>
-        <IconButton onClick={() => setOffset(offset + 20)}>
-          <KeyboardBackspaceIcon />
-        </IconButton>
-        {!!offset && (
-          <IconButton onClick={() => setOffset(offset ? offset - 20 : 0)}>
-            <KeyboardBackspaceIcon sx={{ rotate: "180deg" }} />
-          </IconButton>
-        )}
-      </Grid>
+      <Arrows offset={offset} setOffset={setOffset} />
       {orders?.map((order) => (
         <Order {...order} key={order.id} />
       ))}
