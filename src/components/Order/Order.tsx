@@ -1,7 +1,7 @@
-import { CopyButton } from "./CopyButton";
-import { Cost } from "./Cost";
-import { Description } from "./Description";
-import { Title } from "./Title";
+import { CopyButton } from "../CopyButton";
+import { Cost } from "../Cost";
+import { Description } from "../Description";
+import { Title } from "../Title";
 import { Project } from "@/types";
 import { Box } from "@mui/system";
 
