@@ -8,7 +8,7 @@ const prompt =
   "The response should be no more than 700 characters." +
   "Please write response in two languages: english and russian";
 
-const about = "расскажи мне о чем этот проект";
+const about = "расскажи мне на русском языке, вкратце, о чем этот проект";
 
 export const CopyButton = (props: {
   descr: string | null;

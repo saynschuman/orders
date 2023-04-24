@@ -11,6 +11,7 @@ function App() {
 
   const { data } = useQuery(["orders", offset], () => getOrders(offset), {
     enabled: true,
+    refetchOnWindowFocus: false,
   });
 
   const projects = data?.data?.result?.projects;
