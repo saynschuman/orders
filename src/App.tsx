@@ -2,7 +2,7 @@ import { getOrders } from "./api";
 import { Arrows } from "./components/Arrows/Arrows";
 import { Order } from "./components/Order";
 import { classes } from "./styles";
-import { Box, Grid, IconButton } from "@mui/material";
+import { Box } from "@mui/material";
 import { useEffect, useRef, useState } from "react";
 import { useQuery } from "react-query";
 
