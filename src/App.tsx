@@ -1,4 +1,5 @@
 import { getOrders } from "./api";
+import { CopyButton } from "./components/CopyButton";
 import { Box, Grid, Link, Typography } from "@mui/material";
 import { useQuery } from "react-query";
 
@@ -22,6 +23,7 @@ function App() {
               <Grid item>{o.budget.maximum}</Grid>
             </Grid>
             <Box>{o.description}</Box>
+            <CopyButton descr={o.description} />
           </Box>
         </Box>
       ))}
