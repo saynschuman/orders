@@ -1,6 +1,7 @@
 import { CopyButton } from "../CopyButton";
 import { Cost } from "../Cost";
 import { Description } from "../Description";
+import { Time } from "../Time";
 import { Title } from "../Title";
 import { Project } from "@/types";
 import { Grid } from "@mui/material";
@@ -11,6 +12,7 @@ export const Order = (props: Project) => {
     <Box sx={{ mb: 2 }}>
       <Title title={props.title} seo_url={props.seo_url} />
       <Box>
+        <Time unix={props.time_submitted} />
         <Cost currency={props.currency.code} max={props.budget.maximum} />
         <Description description={props.description} />
         <Grid container gap={1}>
