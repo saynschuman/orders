@@ -7,7 +7,8 @@ import { useQuery } from "react-query";
 
 function App() {
   const { data } = useQuery("orders", getOrders);
-  const orders = data?.data?.result?.projects;
+  const projects = data?.data?.result?.projects;
+  const orders = projects?.sort((a, b) => a.time_submitted - b.time_submitted);
 
   // Создаем ref для контейнера со списком элементов
   const ordersContainerRef = useRef<HTMLDivElement>(null);
