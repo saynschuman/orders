@@ -79,6 +79,14 @@ interface Project {
   requires_upfront_funding: any;
 }
 
+export interface ProjectParams {
+  query?: string;
+  languages?: string;
+  limit?: number;
+  offset?: number;
+  full_description?: boolean;
+}
+
 interface Currency {
   id: number;
   code: string;

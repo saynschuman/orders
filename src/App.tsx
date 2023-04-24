@@ -7,24 +7,21 @@ function App() {
   const orders = data?.data?.result?.projects;
 
   return (
-    <Box sx={{ fontFamily: "sans-serif", p: 2 }}>
+    <Box sx={{ fontFamily: "sans-serif", p: 2, maxWidth: 700, m: "auto" }}>
       {orders?.map((o) => (
         <Box sx={{ mb: 2 }} key={o.id}>
-          <Typography sx={{ fontWeight: "bold" }}>{o.title} </Typography>
+          <Link
+            href={`https://www.freelancer.com/projects/${o.seo_url}`}
+            target="_blank"
+          >
+            <Typography sx={{ fontWeight: "bold" }}>{o.title} </Typography>
+          </Link>
           <Box>
-            <Grid container gap={1}>
+            <Grid container gap={1} sx={{ fontWeight: "bold" }}>
               <Grid item>{o.currency.code}</Grid>
               <Grid item>{o.budget.maximum}</Grid>
             </Grid>
-            <Box>
-              {o.preview_description}...
-              <Link
-                href={`https://www.freelancer.com/projects/${o.seo_url}`}
-                target="_blank"
-              >
-                (details)
-              </Link>
-            </Box>
+            <Box>{o.description}</Box>
           </Box>
         </Box>
       ))}
