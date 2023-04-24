@@ -12,6 +12,7 @@ function App() {
   const { data } = useQuery(["orders", offset], () => getOrders(offset), {
     enabled: true,
   });
+
   const projects = data?.data?.result?.projects;
   const orders = projects?.sort((a, b) => a.time_submitted - b.time_submitted);
 
