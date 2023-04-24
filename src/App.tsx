@@ -22,15 +22,14 @@ function App() {
               <Grid item>{o.currency.code}</Grid>
               <Grid item>{o.budget.maximum}</Grid>
             </Grid>
-            <Box>{o.description}</Box>
-            <div>
+            <Box>
               {o.description?.split("\n").map((line) => (
                 <>
                   {line}
                   <br />
                 </>
               ))}
-            </div>
+            </Box>
             <CopyButton descr={o.description} />
           </Box>
         </Box>
