@@ -7,7 +7,7 @@ export const getOrders = async (offset: number) => {
     const res = await axios.get<ProjectList>(
       getRequestUrl(
         "https://www.freelancer.com/api/projects/0.1/projects/active",
-        { limit: 20, offset, full_description: true, query: "react" }
+        { limit: 20, offset, full_description: true, query: "" }
       )
     );
     return res;
