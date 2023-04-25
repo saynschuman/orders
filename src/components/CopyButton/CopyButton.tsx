@@ -4,7 +4,7 @@ import { useState } from "react";
 
 const prompt =
   "Write a response to this job opening in such a way that the client would want to hire me." +
-  "My skills: react, angular, vue. Have basic experience with python, django." +
+  "My skills: react." +
   "The response should be no more than 700 characters." +
   "Please write response in two languages: english and russian";
 
